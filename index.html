@@ -32,7 +32,7 @@
         },
         getInitialState : function() {
           return {
-            name : 'special-user-for-demo',
+            name : 'guest-user-for-demo',
             user : {}
           };
         },
@@ -41,11 +41,10 @@
           return (
             <div>
               <h3>My Web Version of Yo using React and Firebase</h3>
-              <div className="margin-bottom">This is a demo page signed in with the username "special-user-for-demo"<br/>You can actually sign in via Twitter <a href="authenticated.html">here</a>.</div>
+              <div className="margin-bottom">This is a demo page signed in with the username "guest-user-for-demo"<br/>You can actually sign in via Twitter <a href="authenticated.html">here</a>.</div>
               <UserDisplay user={this.state.user} />
               <PeopleToYo name={this.state.name} />
               <YoDisplay user={this.state.user} name={this.state.name} />
-              <h5>Made by <a href="https://twitter.com/davidchizzle">@davidchizzle</a> from <a href="http://davidandsuzi.com">davidandsuzi.com</a></h5>
             </div>
           );
         }
