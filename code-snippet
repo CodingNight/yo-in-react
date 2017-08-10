@@ -1,0 +1,34 @@
+import ReactDOM from 'react-dom';
+import React from 'react';
+
+class AppComponent extends React.Component {
+  render() {
+    return (
+      <a href='https://twitter.com/share' className='twitter-share-button' ref='share' data-url='https://twitter.com/'>Tweet</a>
+    );
+  }
+
+  onClick() {
+    console.log("Clicked");
+  }
+
+  componentDidMount() {
+    window.twttr.events.bind('click', this.onClick);
+  }
+}
+
+//index.html below
+
+ReactDOM.render(<AppComponent />, document.getElementById('app'));
+<!doctype html>
+<html>
+<head>
+  <title>Twitter Share</title>
+</head>
+<body>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  </script>
+  <div id="app"></div>
+  <script type="text/javascript" src="assets/app.js"></script>
+</body>
+</html>
